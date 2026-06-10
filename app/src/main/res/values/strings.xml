@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">GestionnaireNotes</string>
+    <string name="app_name">Gestionnaire Notes</string>
+    <string name="etoile">☆</string>
 </resources>
