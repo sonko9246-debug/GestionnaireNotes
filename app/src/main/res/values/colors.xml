@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="note_noir">#FF000000</color>
+    <color name="note_blanc">#FFFFFFFF</color>
+    <color name="note_gris">#FF828282</color>
+    <color name="note_vert">#FF219653</color>
+    <color name="note_rouge">#FFEB5757</color>
+    <color name="note_bleu">#FF2F80ED</color>
+    <color name="note_jaune">#FFF2C94C</color>
+    <color name="note_orange">#FFF2994A</color>
+
+
+
+
+    <!--  Couleurs de l'interface générale -->
+
+    <!-- Barre du haut de l'application -->
+    <color name="colorPrimary">#FF000000</color>
+
+    <!-- Barre de statut (haut du téléphone) -->
+    <color name="colorPrimaryDark">#FF000000</color>
+
+    <!-- Bouton flottant FAB (+) -->
+    <color name="colorAccent">#FF000000</color>
+
+    <!-- Texte principal -->
+    <color name="texte_principal">#FF000000</color>
+
+    <!-- Texte secondaire (date) -->
+    <color name="texte_secondaire">#FF828282</color>
+
+</resources>
