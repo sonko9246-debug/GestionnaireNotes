@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/green">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Ligne supérieure : Titre + Étoile favori -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/text_note_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Titre de la note"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <ImageView
+                android:id="@+id/image_favorite"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_star"
+                android:contentDescription="Favori"
+                android:layout_marginStart="8dp"
+                app:tint="@color/star_not_favorite" />
+        </LinearLayout>
+
+        <!-- Ligne inférieure : Date -->
+        <TextView
+            android:id="@+id/text_note_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="01 Janvier 2026"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:textColor="@color/white"
+            android:alpha="0.8" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
