@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnFav
     private NoteAdapter noteAdapter;
     private SearchView searchView;
     private ImageButton buttonFavoritesFilter;
-    private FrameLayout emptyStateView;
+    private LinearLayout emptyStateView;
     private LinearLayout colorPalette;
     private FloatingActionButton fabAddNote;
 

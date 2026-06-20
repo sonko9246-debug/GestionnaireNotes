@@ -4,11 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.gestionnairenotes"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.gestionnairenotes"
@@ -36,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.activity.ktx)
+    implementation(libs.activity)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)

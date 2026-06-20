@@ -98,21 +98,28 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             // Double-clic → basculer favori (Membre 4)
             // Zone gérée par Membre 4 avec GestureDetector
             itemView.setOnTouchListener(new View.OnTouchListener() {
-                private GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
-                    @Override
-                    public boolean onDoubleTap(MotionEvent e) {
-                        if (favoriteListener != null) {
-                            favoriteListener.onFavoriteClick(note, position);
-                        }
-                        return true;
-                    }
-                });
+                                            private GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+
+                                                @Override
+                                                public boolean onDown(MotionEvent e) {
+                                                    return true;
+                                                }
+
+                                                @Override
+                                                public boolean onDoubleTap(MotionEvent e) {
+                                                    if (favoriteListener != null) {
+                                                        favoriteListener.onFavoriteClick(note, position);
+                                                    }
+                                                    return true;
+                                                }
+                                            });
 
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     return gestureDetector.onTouchEvent(event);
                 }
             });
+
         }
 
         /**
