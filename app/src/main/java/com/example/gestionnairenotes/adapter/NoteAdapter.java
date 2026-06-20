@@ -88,38 +88,34 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
             // ========== GESTION DES CLICS ==========
 
-            // Clic simple → ouvrir modification (Membre 3)
-            itemView.setOnClickListener(v -> {
-                Intent intent = new Intent(context, NoteFormActivity.class);
-                intent.putExtra("note_id", note.getId());
-                context.startActivity(intent);
-            });
-
-            // Double-clic → basculer favori (Membre 4)
-            // Zone gérée par Membre 4 avec GestureDetector
-            itemView.setOnTouchListener(new View.OnTouchListener() {
-                                            private GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
-
-                                                @Override
-                                                public boolean onDown(MotionEvent e) {
-                                                    return true;
-                                                }
-
-                                                @Override
-                                                public boolean onDoubleTap(MotionEvent e) {
-                                                    if (favoriteListener != null) {
-                                                        favoriteListener.onFavoriteClick(note, position);
-                                                    }
-                                                    return true;
-                                                }
-                                            });
+            // Clic simple + Double-clic gérés ensemble par GestureDetector
+            GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
 
                 @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    return gestureDetector.onTouchEvent(event);
+                public boolean onDown(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public boolean onSingleTapConfirmed(MotionEvent e) {
+                    // Clic simple → ouvrir modification
+                    Intent intent = new Intent(context, NoteFormActivity.class);
+                    intent.putExtra("note_id", note.getId());
+                    context.startActivity(intent);
+                    return true;
+                }
+
+                @Override
+                public boolean onDoubleTap(MotionEvent e) {
+                    // Double-clic → basculer favori
+                    if (favoriteListener != null) {
+                        favoriteListener.onFavoriteClick(note, position);
+                    }
+                    return true;
                 }
             });
 
+            itemView.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
         }
 
         /**
