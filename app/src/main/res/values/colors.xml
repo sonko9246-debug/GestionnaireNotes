@@ -14,4 +14,9 @@
     <color name="primary">#FF6200EE</color>
     <color name="star_favorite">#FFFFC107</color>
     <color name="star_not_favorite">#FFFFFFFF</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="texte_principal">#212121</color>
+    <color name="texte_secondaire">#757575</color>
 </resources>

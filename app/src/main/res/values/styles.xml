@@ -48,5 +48,4 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/texte_secondaire</item>
     </style>
-
 </resources>
